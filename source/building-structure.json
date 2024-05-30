@@ -1,0 +1,105 @@
+{
+  "realestate": {
+    "id": "uuid-realestate1",
+    "name": "UniversityCampus",
+    "model": "dtmi:org:w3id:rec:RealEstate;1",
+    "includes": [
+      {
+        "id": "uuid-building1",
+        "model": "dtmi:org:w3id:rec:Building;1"
+      }
+    ]
+  },
+  "buildings": [
+    {
+      "id": "uuid-building1",
+      "name": "Building1",
+      "model": "dtmi:org:w3id:rec:Building;1",
+      "isPartOf": [
+        {
+          "id": "uuid-realestate1",
+          "model": "dtmi:org:w3id:rec:RealEstate;1"
+        }
+      ],
+      "hasParts": [
+        {
+          "id": "uuid-floor1",
+          "model": "dtmi:org:w3id:rec:Level;1"
+        }
+      ]
+    }
+  ],
+  "floors": [
+    {
+      "id": "uuid-floor1",
+      "name": "Floor1",
+      "model": "dtmi:org:w3id:rec:Level;1",
+      "isPartOf": [
+        {
+          "id": "uuid-building1",
+          "model": "dtmi:org:w3id:rec:Building;1"
+        }
+      ],
+      "hasParts": [
+        {
+          "id": "uuid-room1",
+          "model": "dtmi:org:w3id:rec:Room;1"
+        },
+        {
+          "id": "uuid-section-west",
+          "model": "dtmi:org:w3id:rec:Workspace;1"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "uuid-section-west",
+      "name": "WestWing",
+      "model": "dtmi:org:w3id:rec:Workspace;1",
+      "isPartOf": [
+        {
+          "id": "uuid-floor1",
+          "model": "building"
+        }
+      ],
+      "hasParts": [
+        {
+          "id": "uuid-room1",
+          "model": "dtmi:org:w3id:rec:Room;1"
+        }
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "id": "uuid-room1",
+      "name": "Room1",
+      "model": "dtmi:org:w3id:rec:Room;1",
+      "isPartOf": [
+        {
+          "id": "uuid-floor1",
+          "model": "dtmi:org:w3id:rec:Level;1"
+        },
+        {
+          "id": "uuid-section-west",
+          "model": "dtmi:org:w3id:rec:Workspace;1"
+        }
+      ],
+      "hasPoints": [
+        {
+          "id": "uuid-sensor2",
+          "model": "dtmi:org:brickschema:schema:Brick:Temperature_Sensor;1"
+        },
+        {
+          "id": "uuid-sensor3",
+          "type": "dtmi:org:brickschema:schema:Brick:CO2_Sensor;1"
+        },
+        {
+          "id": "uuid-sensor4",
+          "model": "dtmi:org:brickschema:schema:Brick:Occupancy_Sensor;1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "sensors": [
+    {
+      "id": "uuid-sensor1",
+      "name": "Humidity",
+      "type": "dtmi:org:brickschema:schema:Brick:Outside_Air_Humidity_Sensor;1",
+      "unit": "percent",
+      "value": 50,
+      "isPointOf": {
+        "id": "uuid-building1",
+        "model": "dtmi:org:w3id:rec:Building;1"
+      }
+    },
+    {
+      "id": "uuid-sensor2",
+      "name": "Temperature",
+      "model": "dtmi:org:brickschema:schema:Brick:Temperature_Sensor;1",
+      "unit": "TODO-celcius",
+      "measurementType": "TODO-temperature",
+      "placedIn": {
+        "id": "uuid-room1",
+        "model": "dtmi:org:w3id:rec:Room;1"
+      },
+      "observes": [
+        {
+          "id": "uuid-room1",
+          "model": "dtmi:org:w3id:rec:Room;1"
+        }
+      ]
+    },
+    {
+      "id": "uuid-sensor3",
+      "name": "CO2",
+      "type": "dtmi:org:brickschema:schema:Brick:CO2_Sensor;1",
+      "measurementType": "ppm",
+      "value": 500,
+      "isPointOf": {
+        "id": "uuid-room1",
+        "model": "dtmi:org:w3id:rec:Room;1"
+      }
+    },
+    {
+      "id": "uuid-sensor4",
+      "name": "Occupancy",
+      "type": "dtmi:org:brickschema:schema:Brick:Occupancy_Sensor;1",
+      "measurementType": "boolean",
+      "isPointOf": {
+        "id": "uuid-room1",
+        "model": "dtmi:org:w3id:rec:Room;1"
+      }
+    }
+  ]
+}
